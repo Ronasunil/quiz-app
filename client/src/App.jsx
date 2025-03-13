@@ -1,7 +1,12 @@
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { AppRouter } from "./routes";
 
 function App() {
-  return <h1>Quiz app</h1>;
+  return (
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
+  );
 }
 
 export default App;
