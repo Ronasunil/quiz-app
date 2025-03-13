@@ -6,6 +6,7 @@ const userSchema = buildSchema(`
         name: String!
         highScore: Int!
         currentScore: Int!
+        profileImage: String!
     }
 
     type Query {
@@ -17,6 +18,7 @@ const userSchema = buildSchema(`
         authUser(name: String!):User
         updateHighScore(id:ID!, score: Int!): User
         updateCurrentScore(id:ID!, score:Int!): User
+        updateUserProfileImage(id:ID!, newImage:string!): User
     }  
 `);
 

@@ -15,6 +15,11 @@ const userSchema = new Schema({
     type: Number,
     default: 0,
   },
+
+  profileImage: {
+    type: String,
+    default: "https://i.ibb.co/0jhT2pzb/default-icon.webp",
+  },
 });
 
 const UserModel = model("User", userSchema);

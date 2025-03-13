@@ -28,7 +28,7 @@ const userResolver = {
     }
   },
 
-  updateHighScore: async ({ score, id }) => {
+  updateHighScore: async ({ id, score }) => {
     try {
       const userExists = await UserModel.findById(id);
       if (!userExists) throw new Error(`User not found`);
@@ -42,13 +42,27 @@ const userResolver = {
     }
   },
 
-  updateCurrentScore: async ({ score, id }) => {
+  updateCurrentScore: async ({ id, score }) => {
     try {
       const userExists = await UserModel.findById(id);
       if (!userExists) throw new Error(`User not found`);
       return await UserModel.findByIdAndUpdate(
         id,
         { $inc: { currentScore: score } },
+        { new: true, runValidators: true }
+      );
+    } catch (err) {
+      throw new Error(`Error updating user`);
+    }
+  },
+
+  updateUserProfileImage: async ({ id, newImage }) => {
+    try {
+      const userExists = await UserModel.findById(id);
+      if (!userExists) throw new Error(`User not found`);
+      return await UserModel.findByIdAndUpdate(
+        id,
+        { profileImage: newImage },
         { new: true, runValidators: true }
       );
     } catch (err) {
