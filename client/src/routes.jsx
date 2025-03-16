@@ -4,8 +4,6 @@ import Quiz from "./pages/quiz/Quiz";
 import Category from "./pages/category/category";
 import Profile from "./pages/profile/Profile";
 import Results from "./pages/results/Results";
-import Modal from "./components/Modal";
-import GridWindow from "./components/GridWindow";
 
 function AppRouter() {
   const elements = useRoutes([

@@ -19,11 +19,15 @@ const userResolver = {
 
   authUser: async ({ name }) => {
     try {
+      console.log(name);
       const userExists = await UserModel.findOne({ name });
+      console.log(userExists);
+
       if (userExists) return userExists;
       const user = await UserModel.create({ name });
       return user;
     } catch (err) {
+      console.log(err);
       throw new Error("Error creating user");
     }
   },

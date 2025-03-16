@@ -2,7 +2,7 @@ import { buildSchema } from "graphql";
 
 const userSchema = buildSchema(`
     type User {
-        id: ID!
+        _id: ID!
         name: String!
         highScore: Int!
         currentScore: Int!
@@ -18,7 +18,7 @@ const userSchema = buildSchema(`
         authUser(name: String!):User
         updateHighScore(id:ID!, score: Int!): User
         updateCurrentScore(id:ID!, score:Int!): User
-        updateUserProfileImage(id:ID!, newImage:string!): User
+        updateUserProfileImage(id:ID!, newImage:String!): User
     }  
 `);
 
