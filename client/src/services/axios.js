@@ -6,7 +6,7 @@ class QuizApi {
       url,
       headers: {
         " Content-Type": "application/json",
-        "X-Api-Key": "3lsgjMYPph1HBauH1DXErdP5POak0dhb2Mp0S060",
+        "X-Api-Key": "dsjVCe5c98ngJGEDNIfx0djtv2sJoQP73F1KKzS5",
       },
     });
 
@@ -19,4 +19,4 @@ class QuizApi {
   }
 }
 
-export const quizAxios = new QuizApi().instance;
+export const quizAxios = new QuizApi().instance();
