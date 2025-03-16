@@ -2,7 +2,7 @@ import Button from "../../components/Button";
 
 function Home() {
   return (
-    <section className="py-6 flex h-screen dark:bg-gray-100 dark:text-gray-900">
+    <section className="py-6 flex h-[80vh] dark:bg-gray-100 dark:text-gray-900">
       <div className="container mx-auto flex flex-col justify-center align items-center p-4 space-y-8 md:p-10 lg:space-y-0 lg:space-x-12 lg:justify-between lg:flex-row">
         <div className="flex flex-col space-y-4 text-center lg:text-left">
           <h1 className="text-5xl font-bold leading-none">CodeQuest</h1>

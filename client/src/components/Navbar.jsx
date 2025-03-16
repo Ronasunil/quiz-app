@@ -1,5 +1,7 @@
+// import { useLocation } from "react-router-dom";
 import Icon from "./Icon";
 import ListItem from "./ListItem";
+import UserAvatar from "./UserAvatar";
 
 function Navbar() {
   return (
@@ -8,16 +10,14 @@ function Navbar() {
         <div className="flex">
           <Icon />
           <ul className="items-stretch hidden space-x-3 lg:flex">
-            <ListItem>Home</ListItem>
-            <ListItem>Categories</ListItem>
-            <ListItem>Profile</ListItem>
-            <ListItem>Leaderboard</ListItem>
+            <ListItem to="/home">Home</ListItem>
+            <ListItem to="/categories">Categories</ListItem>
+            <ListItem to="/profile">Profile</ListItem>
+            <ListItem to="/results">Results</ListItem>
           </ul>
         </div>
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <div className="py-2 px-4 border-2 hover:shadow-md hover:shadow-indigo-400 transition-all duration-300  rounded-lg border-indigo-600  ">
-            <span className="text-xl font-normal">Rona</span>
-          </div>
+          <UserAvatar />
         </div>
       </div>
     </header>

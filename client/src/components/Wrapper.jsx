@@ -1,6 +1,7 @@
 import React from "react";
 
 function Wrapper({ children, sectionHeading, sectionDescription }) {
+  console.log(React.Children.count(children));
   return (
     <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
       <div className="container p-4 mx-auto space-y-16 sm:p-10">
