@@ -3,7 +3,7 @@ import axios from "axios";
 class QuizApi {
   #axiosInstance(url) {
     const instance = axios.create({
-      url,
+      baseURL: url,
       headers: {
         " Content-Type": "application/json",
         "X-Api-Key": "dsjVCe5c98ngJGEDNIfx0djtv2sJoQP73F1KKzS5",

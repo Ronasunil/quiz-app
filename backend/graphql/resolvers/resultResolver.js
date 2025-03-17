@@ -1,6 +1,6 @@
-import { ResultModel } from "../../model/resultModel";
+import { ResultModel } from "../../model/resultModel.js";
 
-const resultResolver = {
+export const resultResolver = {
   getScoreByUserId: async ({ userId }) => {
     try {
       const result = await ResultModel.find({ userId });

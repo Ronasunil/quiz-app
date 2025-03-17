@@ -1,10 +1,19 @@
-function CategoryCard({
-  categoryName = "Unknown",
+import { useNavigate } from "react-router-dom";
 
+function CategoryCard({
+  categoryName,
   img = "https://source.unsplash.com/240x320/?portrait?0",
 }) {
+  const navigate = useNavigate();
+
+  const redirectToQuestionsPage = function () {
+    navigate(`/quiz/play?category=${categoryName}`);
+  };
   return (
-    <div className="flex flex-col  h-80 space-x-6">
+    <div
+      onClick={redirectToQuestionsPage}
+      className="flex flex-col  h-80 space-x-6 cursor-pointer"
+    >
       <h4 className="text-xl text-center font-semibold">{categoryName}</h4>
       <img
         alt=""

@@ -1,12 +1,13 @@
 import { buildSchema } from "graphql";
 
-const resultSchema = buildSchema(`
+export const resultSchema = buildSchema(`
     type Result {
-        _id: Id!
+        _id: ID!
         userId: String!
-        score: Number!
+        score: Int!
         isHighScore: Boolean!
-        totalQUestion: Number!
+        totalQUestion: Int!
+        date: String!
     }
 
     type Query {
@@ -14,6 +15,6 @@ const resultSchema = buildSchema(`
     }
     
     type Mutation {
-        addResult(userId: String!, score: Number!, isHighScore: Boolean!, totalQUestion: Number!): Result
+        addResult(userId: String!, score: Int!, isHighScore: Boolean!, totalQUestion: Int!): Result
     }
  `);

@@ -3,6 +3,8 @@ import cors from "cors";
 import { userSchema } from "./graphql/schema/userSchema.js";
 import { userResolver } from "./graphql/resolvers/userResolver.js";
 import { graphqlHTTP } from "express-graphql";
+import { resultSchema } from "./graphql/schema/resultSchema.js";
+import { resultResolver } from "./graphql/resolvers/resultResolver.js";
 
 const app = express();
 
@@ -16,6 +18,15 @@ app.use(
   graphqlHTTP({
     schema: userSchema,
     rootValue: userResolver,
+    graphiql: true,
+  })
+);
+
+app.use(
+  "/results",
+  graphqlHTTP({
+    schema: resultSchema,
+    rootValue: resultResolver,
     graphiql: true,
   })
 );

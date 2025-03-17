@@ -15,10 +15,16 @@ const resultSchema = new Schema({
     type: Boolean,
     required: true,
   },
+
   totalQUestion: {
     type: Number,
     required: true,
     default: 20,
+  },
+
+  date: {
+    type: Date,
+    default: Date.now(),
   },
 });
 
