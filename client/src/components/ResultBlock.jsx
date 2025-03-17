@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
-function ResultBlock({ score = 1, totalQuestions = 20 }) {
+function ResultBlock({ score = 1, totalQuestions = 20, isHighScore = false }) {
   const percentage = (score / totalQuestions) * 100;
-  const isHighScore = percentage >= 80;
 
   const [progress, setProgress] = useState(0);
 
