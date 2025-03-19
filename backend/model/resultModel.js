@@ -16,7 +16,7 @@ const resultSchema = new Schema({
     required: true,
   },
 
-  totalQUestion: {
+  totalQuestion: {
     type: Number,
     required: true,
     default: 20,

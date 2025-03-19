@@ -6,7 +6,7 @@ export const resultSchema = buildSchema(`
         userId: String!
         score: Int!
         isHighScore: Boolean!
-        totalQUestion: Int!
+        totalQuestion: Int!
         date: String!
     }
 
@@ -15,6 +15,7 @@ export const resultSchema = buildSchema(`
     }
     
     type Mutation {
-        addResult(userId: String!, score: Int!, isHighScore: Boolean!, totalQUestion: Int!): Result
+        addResult(userId: String!, score: Int!, isHighScore: Boolean!, totalQuestion: Int!): Result
+        
     }
  `);

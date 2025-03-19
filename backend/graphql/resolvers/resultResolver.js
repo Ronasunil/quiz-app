@@ -11,14 +11,16 @@ export const resultResolver = {
     }
   },
 
-  addResult: async ({ userId, score, isHighScore, totalQUestion }) => {
+  addResult: async ({ userId, score, isHighScore, totalQuestion }) => {
     try {
+      console.log(userId);
       const result = await ResultModel.create({
         userId,
         score,
         isHighScore,
-        totalQUestion,
+        totalQuestion,
       });
+      console.log(result);
       return result;
     } catch (err) {
       throw new Error("Error adding result");

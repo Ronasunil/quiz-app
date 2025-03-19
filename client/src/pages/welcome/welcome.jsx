@@ -27,13 +27,15 @@ function Home() {
   useEffect(() => {
     if (!data) return;
     const serilizedUser = JSON.stringify(data.authUser);
+
     setUser(serilizedUser);
     dispatch({ type: "ADD_USER", payload: data.authUser });
   }, [data, setUser, dispatch]);
 
   useEffect(() => {
     if (user) navigate("/categories");
-    dispatch({ type: "ADD_USER", payload: user });
+    console.log(user);
+    dispatch({ type: "ADD_USER", payload: JSON.parse(user || "{}") });
   }, [user, navigate, dispatch]);
 
   return (

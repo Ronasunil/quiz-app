@@ -4,15 +4,20 @@ import Quiz from "./pages/quiz/Quiz";
 import Category from "./pages/category/category";
 import Profile from "./pages/profile/Profile";
 import Results from "./pages/results/Results";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  getApolloContext,
+} from "@apollo/client";
 import Question from "./pages/question/Question";
 
-const userClient = new ApolloClient({
+export const userClient = new ApolloClient({
   uri: "http://localhost:2000/users",
   cache: new InMemoryCache(),
 });
 
-const resultClient = new ApolloClient({
+export const resultClient = new ApolloClient({
   uri: "http://localhost:2000/results",
   cache: new InMemoryCache(),
 });

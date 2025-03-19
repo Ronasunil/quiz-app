@@ -8,6 +8,8 @@ const authReducer = function (state, action) {
       return { ...state, user: action.payload };
     case "CLEAR_USER":
       return initialState;
+    case "UPDATE_USER":
+      return { ...state, ...action.payload };
   }
 };
 

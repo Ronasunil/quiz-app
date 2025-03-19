@@ -21,7 +21,6 @@ const userResolver = {
     try {
       console.log(name);
       const userExists = await UserModel.findOne({ name });
-      console.log(userExists);
 
       if (userExists) return userExists;
       const user = await UserModel.create({ name });
@@ -50,11 +49,13 @@ const userResolver = {
     try {
       const userExists = await UserModel.findById(id);
       if (!userExists) throw new Error(`User not found`);
-      return await UserModel.findByIdAndUpdate(
+      const user = await UserModel.findByIdAndUpdate(
         id,
-        { $inc: { currentScore: score } },
+        { currentScore: score },
         { new: true, runValidators: true }
       );
+      console.log(user);
+      return user;
     } catch (err) {
       throw new Error(`Error updating user`);
     }
